@@ -30,6 +30,12 @@ variable "cluster_identity_oidc_issuer_arn" {
   description = "The OIDC Identity issuer ARN for the cluster that can be used to associate IAM roles with a service account."
 }
 
+variable "repository" {
+  type        = string
+  description = "The URI for the repository where helm charts and oci images are located"
+  default     = "public.ecr.aws/aws-controllers-k8s"
+}
+
 variable "helm_services" {
   type = list(object({
     name       = string
